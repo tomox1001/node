@@ -1,0 +1,69 @@
+{
+
+  "predef": [
+    "define",
+    "require",
+    "requirejs"
+  ],
+
+  "indent": 2, // インデント
+
+  "bitwise": false, // ビット演算子の禁止
+  "camelcase": false, // camelCase, UPPERASEの強制
+  "curly": false, // if, forのブロックスコープを必ず{}で括るよう強制
+  "eqeqeq": true, // 比較演算子は==, != ではなく===, !==を強制
+  "forin": false, // for...inループ内でhasOwnPropertyでのチェックを強制
+  "immed": true, // 括弧で括られていない無名関数の即時実行禁止
+  "latedef": "nofunc", // var前の変数定義禁止 "nofunc"で関数は除外
+  "maxcomplexity": false, // 循環的複雑度の制限
+  "maxdepth": false, // 最大ネスト数の制限
+  "maxerr": 100, // 最大エラー数の制限
+  "maxlen": false, // 一行の長さ制限
+  "maxparams": false, // 関数の最大引数の制限
+  "maxstatements": false, // 関数ごとの最大行数の制限
+  "newcap": false, // コンストラクタ名は大文字に強制
+  "noarg": true, // arguments.caller and arguments.callee の使用禁止
+  "noempty": true, // 空ブロックの禁止
+  "nonew": false, // new の禁止
+  "plusplus": false, // ++, -- の禁止
+  "quotmark": "single", // クォートの規定 true: どちらかに規定, false: 規定しない, "single", "double"
+  "regexp": false, // 正規表現に.の使用を禁止
+  "undef": true, // 定義されていない変数の使用を禁止
+  "unused": true, // 使っていない変数の宣言を禁止
+  "strict": true, // use strict;の強制
+  "trailing": true, // 行末のホワイトスペース禁止
+
+  "boss": false, // if (a = b)のような条件式での代入を許可
+  "debug": false, // debugger の許可
+  "eqnull": false, // == null の許可
+  "esnext": true, // ECMAScript 6 メソッド許可
+  "evil": true, // eval と new Function() の許可
+  "expr": false, // 代入や関数呼び出しが期待されているところで式をかくことを許可
+  "funcscope": false, // 関数スコープチェックの無効化
+  "globalstrict": false, // グローバルな"use strict"許可
+  "iterator": false, // __iterator__プロパティの使用を許可
+  "lastsemic": false, // ワンライナーの場合、最後のセミコロン抜けを許可
+  "laxbreak": false, // 区切り文字のない改行を許可
+  "laxcomma": false, // , を先に書くスタイルの許可
+  "loopfunc": false, // 関数の無限ループチェックの無効化
+  "multistr":  false, // 改行を\でエスケープしていない複数行テキストのチェック無効化
+  "onecase": false, // 1つだけの条件のswitchを許可
+  "proto": true, // __proto__プロパティの使用を許可
+  "regexdash": false, // エスケープしてない-が正規表現の文字クラス([])中の最後にあることを許可
+  "scripturl": true, // javascript:はじまりのURLの許可
+  "smarttabs": false, // tabとspaceのインデントが混在していることを許可
+  "shadow": false, // 同スコープ内で変数を再定義することを許可
+  "sub": false, // オブジェクトのプロパティの参照でドット表記が使える時でもobj['hoge']の表記で参照することを許可
+  "supernew": false, // new Objectやnew function(){}といった書き方も許可
+  "validthis": false, // コンストラクタ関数以外でのthisの呼び出しを許可
+
+  "browser": true, // ブラウザで定義されているグローバルな要素の使用を許可
+  "jquery": false, // jQueryで定義されているグローバルな要素の使用を許可
+  "node": true, // nodeで定義されているグローバルな要素の使用を許可
+  "worker": true, // WebWorkerで定義されているグローバルな要素の使用を許可
+
+  "nomen": false, // 名前の先頭または末尾でアンダースコアを禁止
+  "onevar": false, // 変数宣言を関数の最初に書くことの強制
+  "white": false // Douglas Crockfordのコーディングスタイルに照らし合わせてチェック
+
+}
