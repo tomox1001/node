@@ -1,5 +1,4 @@
 {
-
   "predef": [
     "define",
     "require",
@@ -65,5 +64,4 @@
   "nomen": false, // 名前の先頭または末尾でアンダースコアを禁止
   "onevar": false, // 変数宣言を関数の最初に書くことの強制
   "white": false // Douglas Crockfordのコーディングスタイルに照らし合わせてチェック
-
 }

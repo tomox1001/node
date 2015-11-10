@@ -3,20 +3,20 @@
 var mongo = require('./');
 
 exports.find = function(id, callback) {
-    var collection = getCollection();
-    collection.find({ _id:id }).toArray(function(err, docs) {
-        if (err) {
-            return callback(err);
-        }
+  var collection = getCollection();
+  collection.find({ _id:id }).toArray(function(err, docs) {
+    if (err) {
+      return callback(err);
+    }
 
-        console.log("Found the following records");
-        console.dir(docs);
+    console.log("Found the following records");
+    console.dir(docs);
 
-        callback(null, docs);
-    });
+    callback(null, docs);
+  });
 };
 
 function getCollection() {
-    var db = mongo.getClient();
-    return db.collection('order');
+  var db = mongo.getClient();
+  return db.collection('order');
 }
