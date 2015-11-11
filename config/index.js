@@ -13,7 +13,7 @@ exports.get = function() {
 
 
 /**
- * connect to the Server
+ * Config setup
  */
 exports.setup = function(env) {
   _config = require('./' + env);
