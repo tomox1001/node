@@ -59,14 +59,17 @@ if (app.get('env') === 'development') {
 }
 
 // datastore setup
-var mongodb = require('./datastore/mongodb');
-mongodb.connect();
+//var mongodb = require('./datastore/mongodb');
+//mongodb.connect();
 
 var redis = require('./datastore/redis');
 redis.connect();
 
+require('./datastore/momongoz');
+
+// uncaughtException
 process.on('uncaughtException', function(err) {
-  logger.app.err(err);
+  logger.app.error(err);
   mongodb.disconnect();
 });
 

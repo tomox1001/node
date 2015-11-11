@@ -4,7 +4,7 @@ var _config;
 
 exports.get = function() {
   if (!_config) {
-    logger.app.err('No config!!');
+    logger.app.error('No config!!');
     return;
   }
 

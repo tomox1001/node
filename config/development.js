@@ -3,9 +3,11 @@
 var _config = {
   datastore: {
     mongodb: {
-      hosts: 'localhost',
+      host: 'localhost',
       port: 27017,
-      name: 'mt',
+      database: 'mt',
+      assert:true,
+      collections: require('./collections'),
     },
     redis: {
       hosts: 'localhost',

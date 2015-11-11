@@ -5,11 +5,11 @@ var mongoConf = require('../../config').get().datastore.mongodb;
 var logger = require('../../logger');
 
 var _db;
-var url = 'mongodb://' + mongoConf.hosts + ':' + mongoConf.port + '/' + mongoConf.name;
+var url = 'mongodb://' + mongoConf.host + ':' + mongoConf.port + '/' + mongoConf.name;
 
 exports.getClient = function() {
   if (!_db) {
-    logger.app.err('Not connected to mongo server');
+    logger.app.error('Not connected to mongo server');
     return;
   }
 

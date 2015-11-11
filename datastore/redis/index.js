@@ -18,5 +18,5 @@ exports.getClient = function() {
  * connect to the Server
  */
 exports.connect = function() {
-  _cache = new Redis(redisConf.port, redisConf.hosts);
+  _cache = new Redis(redisConf.port, redisConf.host);
 };

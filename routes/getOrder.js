@@ -4,7 +4,8 @@ var _ = require('lodash');
 var logger = require('../logger');
 var express = require('express');
 var router = express.Router();
-var orderDb = require('../datastore/mongodb/order');
+
+var db = require('../datastore/momongoz');
 // var redis = require('../datastore/redis');
 
 router.get('/:orderId?', function(req, res) {
@@ -16,20 +17,18 @@ router.get('/:orderId?', function(req, res) {
   //  console.log(result);
   //});
 
-  orderDb.find(orderId, function(err, orders) {
+  db.Order.findOne(orderId, function(err, order) {
     if (err) {
-      logger.app.err('Not found order : ', orderId);
+      logger.app.error(err);
       res.json({ result: false });
       return;
     }
 
-    if (_.isEmpty(orders)) {
-      logger.app.debug('Not found order : ', orderId);
+    if (_.isEmpty(order)) {
+      logger.app.error('Not found order : ', orderId);
       res.json({ result: false });
       return;
     }
-
-    var order = orders[0];
 
     var result = {
       result: true,
