@@ -4,12 +4,6 @@
 ```
 $ node --version
 v0.12.7
-
-$ mongo --version
-MongoDB shell version: 3.0.4
-
-$ redis-cli --version
-redis-cli 3.0.2
 ```
 
 ## Installation
@@ -31,6 +25,19 @@ nodebrew use v0.12.7
 Install Vagrant/VirtualBox
 - https://www.vagrantup.com/downloads.html
 - https://www.virtualbox.org/wiki/Downloads
+
+```
+$ vagrant ssh
+Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+New release '14.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Welcome to your Vagrant-built virtual machine.
+Last login: Wed Nov 11 08:51:22 2015 from 10.0.2.2
+vagrant@precise64:~$
+```
 
 Install the node_modules:
 ```
