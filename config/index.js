@@ -1,43 +1,20 @@
 'use strict';
 
-var _config = {
-  datastore: {
-    mongodb: {
-      hosts: '52.192.138.45',
-      port: 27017,
-      name: 'mt',
-    },
-    redis: {
-      hosts: '52.192.138.45',
-      port: 6379,
-    }
-  },
-  logger: {
-    appenders: [
-    {
-      category: 'access',
-      type: 'dateFile',
-      filename: '/tmp/access.log',
-      pattern: '-yyyy-MM-dd',
-      backups: 3
-    },
-    {
-      category: 'app',
-      type: 'dateFile',
-      filename: '/tmp/app.log',
-      pattern: '-yyyy-MM-dd',
-      backups: 3
-    },
-    {
-      type: 'console'
-    }
-    ],
-    levels: {
-      access: 'ALL',
-      system: 'ALL',
-      error: 'ALL',
-    }
+var _config;
+
+exports.get = function() {
+  if (!_config) {
+    logger.app.err('No config!!');
+    return;
   }
+
+  return _config;
 };
 
-module.exports = _config;
+
+/**
+ * connect to the Server
+ */
+exports.setup = function(env) {
+  _config = require('./' + env);
+};

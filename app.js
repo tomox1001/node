@@ -8,6 +8,10 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+// config setup
+var config = require('./config');
+config.setup(app.get('env'));
+
 // view engine setup
 var ect = require('ect');
 app.engine('ect', ect({ watch: true, root: __dirname + '/views', ext: '.ect' }).render);
@@ -32,9 +36,9 @@ app.use(function(req, res, next) {
 
 // error handlers
 
+if (app.get('env') === 'development') {
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -42,17 +46,17 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
-}
-
+} else {
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: {}
+    });
   });
-});
+}
 
 // datastore setup
 var mongodb = require('./datastore/mongodb');
@@ -62,7 +66,7 @@ var redis = require('./datastore/redis');
 redis.connect();
 
 process.on('uncaughtException', function(err) {
-  logger.error.err(err);
+  logger.app.err(err);
   mongodb.disconnect();
 });
 

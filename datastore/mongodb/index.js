@@ -1,7 +1,7 @@
 'use strict';
 
 var MongoClient = require('mongodb').MongoClient;
-var mongoConf = require('../../config').datastore.mongodb;
+var mongoConf = require('../../config').get().datastore.mongodb;
 var logger = require('../../logger');
 
 var _db;
