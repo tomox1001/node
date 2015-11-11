@@ -15,6 +15,7 @@
     "lodash": "~3.10.1",
     "log4js": "^0.6.27",
     "mongodb": "~2.0.48",
-    "neo-async": "~1.6.0"
+    "neo-async": "~1.6.0",
+    "newrelic": "^1.23.1"
   }
 }
