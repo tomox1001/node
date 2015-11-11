@@ -29,10 +29,8 @@ nodebrew use v0.12.7
 ```
 
 Install Vagrant/VirtualBox
-```
-https://www.vagrantup.com/downloads.html
-https://www.virtualbox.org/wiki/Downloads
-```
+- https://www.vagrantup.com/downloads.html
+- https://www.virtualbox.org/wiki/Downloads
 
 Install the node_modules:
 ```
@@ -43,7 +41,7 @@ $ npm i
 Start mongo/redis in Vagrant:
 ```
 $ vagrant up
-# $ vagrant halt 停止
+$ vagrant halt # 停止
 ```
 
 Start the server:
