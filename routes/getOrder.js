@@ -1,12 +1,12 @@
 'use strict';
 
 var _ = require('lodash');
-var logger = require('../logger');
+var logger = require('logger');
 var express = require('express');
 var router = express.Router();
 
-var db = require('../datastore/momongoz');
-// var redis = require('../datastore/redis');
+var db = require('datastore/momongoz');
+// var redis = require('datastore/redis');
 
 router.get('/:orderId?', function(req, res) {
   var orderId = req.params.orderId;

@@ -2,14 +2,14 @@
 
 var express = require('express');
 var path = require('path');
-var logger = require('./logger');
+var logger = require('logger');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var app = express();
 
 // config setup
-var config = require('./config');
+var config = require('config');
 config.setup(app.get('env'));
 
 // view engine setup
@@ -62,10 +62,10 @@ if (app.get('env') === 'development') {
 //var mongodb = require('./datastore/mongodb');
 //mongodb.connect();
 
-var redis = require('./datastore/redis');
+var redis = require('datastore/redis');
 redis.connect();
 
-require('./datastore/momongoz');
+require('datastore/momongoz');
 
 // uncaughtException
 process.on('uncaughtException', function(err) {
