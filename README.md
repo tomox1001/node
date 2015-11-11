@@ -9,17 +9,15 @@ v0.12.7
 ## Installation
 Install the nodejs
 ```
-$ brew install nodebrew
-$ nodebrew install v0.12.7
-$ nodebrew use v0.12.7
+$ nvm install 0.12.7
+$ nvm use 0.12.7
 $ node -v
 v0.12.7
 ```
 
 Edit ~/.bashrc
 ```
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-nodebrew use v0.12.7
+nvm use 0.12.7
 ```
 
 Install Vagrant/VirtualBox
