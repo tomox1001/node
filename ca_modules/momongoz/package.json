@@ -1,0 +1,30 @@
+{
+  "name": "momongoz",
+  "version": "1.1.0",
+  "description": "original mongo wrapper.",
+  "main": "lib/index.js",
+  "scripts": {
+    "pretest": "sh ./test/load.sh",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://ghe.amb.ca.local/kawano-tomonori/momongoz.git"
+  },
+  "author": "Tomonori Kawano",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "cd3bd99e274233642b53975ec2bb420b7641a92e",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-shell": "~0.6.0",
+    "mocha": "~1.14.0",
+    "should": "~2.1.0"
+  },
+  "dependencies": {
+    "mongodb": "~1.4.8",
+    "log4js": "~0.6.9",
+    "async": "~0.2.9"
+  }
+}

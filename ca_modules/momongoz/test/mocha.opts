@@ -1,0 +1,4 @@
+--ui bdd
+--reporter nyan
+--timeout 5000
+--require should

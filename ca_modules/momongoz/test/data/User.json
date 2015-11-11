@@ -1,0 +1,3 @@
+{ "_id" : "test", "amebaId" : "kariblo-00001", "name" : "ともっくす" }
+{ "_id" : "test1", "amebaId" : "kariblo-10001", "name" : "normal api find" }
+{ "_id" : "test2", "amebaId" : "kariblo-10002", "name" : "normal api find" }

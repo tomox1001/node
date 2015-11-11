@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "env NODE_PATH=./modules:./lib node ./bin/www"
+    "start": "env NODE_PATH=./ca_modules:./lib node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
