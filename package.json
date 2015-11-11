@@ -1,6 +1,6 @@
 {
-  "name": "untitled",
-  "version": "0.0.0",
+  "name": "minus-tsunderation",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -11,10 +11,10 @@
     "debug": "~2.2.0",
     "ect": "~0.5.9",
     "express": "~4.13.1",
-    "hiredis": "~0.4.1",
+    "ioredis": "^1.10.0",
     "lodash": "~3.10.1",
+    "log4js": "^0.6.27",
     "mongodb": "~2.0.48",
-    "morgan": "~1.6.1",
     "neo-async": "~1.6.0"
   }
 }

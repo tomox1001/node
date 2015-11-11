@@ -2,7 +2,7 @@
 
 var express = require('express');
 var path = require('path');
-var logger = require('morgan');
+var logger = require('./logger');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
@@ -13,7 +13,7 @@ var ect = require('ect');
 app.engine('ect', ect({ watch: true, root: __dirname + '/views', ext: '.ect' }).render);
 app.set('view engine', 'ect');
 
-app.use(logger('dev'));
+app.use(logger.express);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -58,7 +58,11 @@ app.use(function(err, req, res, next) {
 var mongodb = require('./datastore/mongodb');
 mongodb.connect();
 
+var redis = require('./datastore/redis');
+redis.connect();
+
 process.on('uncaughtException', function(err) {
+  logger.error.err(err);
   mongodb.disconnect();
 });
 

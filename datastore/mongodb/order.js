@@ -1,16 +1,16 @@
 'use strict';
 
 var mongo = require('./');
+var logger = require('../../logger');
 
 exports.find = function(id, callback) {
   var collection = getCollection();
-  collection.find({ _id:id }).toArray(function(err, docs) {
+  collection.find({ _id: id }).toArray(function(err, docs) {
     if (err) {
       return callback(err);
     }
 
-    console.log("Found the following records");
-    console.dir(docs);
+    logger.app.debug('Found the following records', docs);
 
     callback(null, docs);
   });

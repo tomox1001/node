@@ -2,13 +2,14 @@
 
 var MongoClient = require('mongodb').MongoClient;
 var mongoConf = require('../../config').datastore.mongodb;
+var logger = require('../../logger');
 
 var _db;
 var url = 'mongodb://' + mongoConf.hosts + ':' + mongoConf.port + '/' + mongoConf.name;
 
 exports.getClient = function() {
   if (!_db) {
-    console.error('Not connected to mongo server');
+    logger.app.err('Not connected to mongo server');
     return;
   }
 
@@ -24,7 +25,7 @@ exports.connect = function() {
       process.exit(1);
     }
 
-    console.log('Connected correctly to server');
+    logger.app.debug('Connected correctly to server');
     _db = db;
     init();
   });
@@ -35,14 +36,14 @@ exports.connect = function() {
  */
 exports.disconnect = function() {
   _db.close();
-  console.log('Disconnected correctly to server');
+  logger.app.debug('Disconnected correctly to server');
 };
 
 /**
  * init
  */
 function init() {
-  console.log('mongo init start');
+  logger.app.debug('mongo init start');
 
   // TODO create cache
 }
