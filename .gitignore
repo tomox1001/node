@@ -3,3 +3,4 @@ npm-debug.log
 .idea
 .vagrant
 newrelic_agent.log
+*.min.css
