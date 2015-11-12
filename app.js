@@ -87,7 +87,7 @@ function isDev(app) {
 }
 
 function isPrd(app) {
-  return app.get('env') === 'production';
+  return app.get('env') === 'product';
 }
 
 module.exports = app;
