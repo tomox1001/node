@@ -97,3 +97,6 @@ function isPrd(app) {
 }
 
 module.exports = app;
+
+// ほげほげ
+
