@@ -1,5 +1,8 @@
 'use strict';
 
+// newreric setup
+require('newrelic');
+
 var express = require('express');
 var path = require('path');
 var logger = require('logger');
@@ -7,11 +10,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var app = express();
-
-// newreric setup
-if (isPrd(app)) {
-  require('newrelic');
-}
 
 // config setup
 var config = require('config');
