@@ -1,8 +1,5 @@
 'use strict';
 
-// newreric setup
-require('newrelic');
-
 var express = require('express');
 var path = require('path');
 var logger = require('logger');
@@ -10,6 +7,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var app = express();
+
+// newreric setup
+if (isPrd(app)) {
+  require('newrelic');
+}
 
 // config setup
 var config = require('config');
@@ -24,7 +26,11 @@ app.use(logger.express);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+// static setup
+if (isDev(app)) {
+  app.use(express.static(path.join(__dirname, 'public')));
+}
 
 // API setup
 app.use('/', require('./routes/index'));
@@ -37,11 +43,10 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
-
-if (app.get('env') === 'development') {
-// development error handler
-// will print stacktrace
+// development
+if (isDev(app)) {
+  // error handlers
+  // will print stacktrace
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -49,9 +54,10 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
+// production
 } else {
-// production error handler
-// no stacktraces leaked to user
+  // error handlers
+  // no stacktraces leaked to user
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -75,5 +81,13 @@ process.on('uncaughtException', function(err) {
   logger.app.error(err);
   mongodb.disconnect();
 });
+
+function isDev(app) {
+  return app.get('env') === 'development';
+}
+
+function isPrd(app) {
+  return app.get('env') === 'production';
+}
 
 module.exports = app;
