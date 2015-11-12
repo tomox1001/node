@@ -31,8 +31,16 @@ if (isDev(app)) {
 }
 
 // API setup
-app.use('/', require('./routes/index'));
-app.use('/getOrder', require('./routes/getOrder'));
+var routesPath = path.join(__dirname, 'routes');
+require('fs').readdirSync(routesPath).forEach(function(file) {
+  var fileName = file.replace(path.extname(file), '');
+  var rootPath = fileName
+  if (fileName === 'index') {
+    rootPath = '';
+  }
+
+  app.use('/' + rootPath, require('./routes/' + fileName));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
