@@ -34,7 +34,7 @@ if (isDev(app)) {
 var routesPath = path.join(__dirname, 'routes');
 require('fs').readdirSync(routesPath).forEach(function(file) {
   var fileName = file.replace(path.extname(file), '');
-  var rootPath = fileName
+  var rootPath = fileName;
   if (fileName === 'index') {
     rootPath = '';
   }
