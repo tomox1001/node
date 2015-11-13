@@ -2,6 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
+var _ = require('lodash');
 
 var userService = require('service/user');
 
@@ -16,12 +17,21 @@ router.get('/:userId', function(req, res, next) {
   userService.search(query, function(err, result) {
     var userData = result[0];
 
+    var userFriends = [];
+    _.each(userData.userFriends, function(userId) {
+      var user = userService.get(userId);
+      userFriends.push({
+        userId: userId,
+        userImage: user.userImage,
+      });
+    });
+
     res.render('user', {
       userId: userData.userId,
       userPublicScore: userData.userPublicScore,
       userImage: userData.userImage,
 
-      userFriends: userData.userFriends,
+      userFriends: userFriends,
       userFriendCount: userData.userFriends.length,
       recommend: {  // おすすめ
         itemImages: [
