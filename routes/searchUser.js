@@ -16,7 +16,7 @@ function res_(res, data) {
 }
 
 
-router.get('/:findByUserId?', function(req, res) {
+router.get('/', function(req, res) {
   var query = req.query;
   userService.search(query, function(err, result) {
     if (err) {
