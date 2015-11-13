@@ -77,15 +77,14 @@ if (isDev(app)) {
 //var mongodb = require('./datastore/mongodb');
 //mongodb.connect();
 
-var redis = require('datastore/redis');
-redis.connect();
-
-require('datastore/momongoz');
+//var redis = require('datastore/redis');
+//redis.connect();
+//
+//require('datastore/momongoz');
 
 // uncaughtException
 process.on('uncaughtException', function(err) {
   logger.app.error(err);
-  mongodb.disconnect();
 });
 
 function isDev(app) {
