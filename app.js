@@ -98,5 +98,8 @@ function isPrd(app) {
 
 module.exports = app;
 
-// ほげほげ
+// オンメモリにのせる
+require('cacheupdater').load(function(err) {
+  err && logger.app.error(err);
+});
 
