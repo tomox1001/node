@@ -13,7 +13,6 @@ router.get('/:userId', function(req, res, next) {
     limit: 4,
   };
 
-  /*
   userService.search(query, function(err, result) {
     var userData = result[0];
 
@@ -22,59 +21,23 @@ router.get('/:userId', function(req, res, next) {
       userPublicScore: userData.userPublicScore,
       userImage: userData.userImage,
 
-      // ↑ここまで作った
-
-      userFriends: [
-        {
-          userId: 'user_2',
-          userImage: 'user_2.png',
-        },
-      ],
-      userFriendCount: 40,
+      userFriends: userData.userFriends,
+      userFriendCount: userData.userFriends.length,
       recommend: {  // おすすめ
         itemImages: [
-          'item_1.png',
-          'item_2.png',
-          'item_3.png',
+          'it0a6a1a65e932857edc55cf3332a2b1fd84ee5da4.png',
+          'it0a67fbe33e717d0b73939f0858433551e3a688b5.png',
+          'it0a725df24007de0fb8fddf86d02acaffdad853f7.png',
         ],
       },
       post: {  // 最近投稿
         itemImages: [
-          'item_4.png',
-          'item_5.png',
-          'item_6.png',
+          'it0a6a1a65e932857edc55cf3332a2b1fd84ee5da4.png',
+          'it0a67fbe33e717d0b73939f0858433551e3a688b5.png',
+          'it0a725df24007de0fb8fddf86d02acaffdad853f7.png',
         ],
       }
     });
-  });
-  */
-
-
-  res.render('user', {
-    userId: 'user_1',
-    userPublicScore: 52,
-    userImage: 'user_1.png',
-    userFriends: [
-      {
-        userId: 'user_2',
-        userImage: 'user_2.png',
-      },
-    ],
-    userFriendCount: 40,
-    recommend: {  // おすすめ
-      itemImages: [
-        'item_1.png',
-        'item_2.png',
-        'item_3.png',
-      ],
-    },
-    post: {  // 最近投稿
-      itemImages: [
-        'item_4.png',
-        'item_5.png',
-        'item_6.png',
-      ],
-    }
   });
 });
 
