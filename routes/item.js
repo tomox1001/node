@@ -12,7 +12,10 @@ router.get('/', function(req, res, next) {
     itemSupplier: 'あっぷる',
     itemSoldQuantity: 123,
     itemSalePrice: '23,567円',
-    itemTags: '工具,テレビ',
+    itemTags: [
+      '工具',
+      'テレビ',
+    ],
 
     // おすすめ
     recommend: {
