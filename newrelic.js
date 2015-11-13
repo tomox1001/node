@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['test'],
+  app_name: ['TOTEC2015'],
   /**
    * Your New Relic license key.
    */
