@@ -1,10 +1,5 @@
 <% extend 'layout' %>
 
-      <!-- Navbar content -->
-      <nav class="navbar navbar-light logo" style="background-color: #e3f2fd;">
-        Amezon.com
-      </nav>
-
       <!-- breadcrumb -->
       <ol class="breadcrumb" style="background-color: rgba(1, 1, 1, .05);">
         <li><a href="#">Home</a></li>
@@ -32,12 +27,12 @@
 
       <!-- Friends -->
       <div class="friends">
-        <h5 class="p-a">フレンド <span class="label label-pill label-default">4</span></h5>
+        <h5 class="p-a">フレンド <span class="label label-pill label-default"><%- @userFriendCount %></span></h5>
         <div class="list-group">
         <% for userFriend in @userFriends : %>
         <button type="button" class="list-group-item">
           <a href="#" style="color: #333;">
-            <img src="/img/user/<%- userFriend.userImage %>" alt="Us000001のサムネイル画像" class="img-circle m-r" width="24" height="24"><%- userFriend.userId %>
+            <img src="/img/user/<%- userFriend.userImage %>" alt="<%- userFriend.userId %>のサムネイル画像" class="img-circle m-r" width="24" height="24"><%- userFriend.userId %>
           </a>
         </button>
         <% end %>
