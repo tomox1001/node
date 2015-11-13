@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
         userImage: 'user_2.png',
       },
     ],
+    userFriendCount: 40,
     recommend: {  // おすすめ
       itemImages: [
         'item_1.png',

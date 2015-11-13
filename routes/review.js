@@ -29,6 +29,7 @@ router.get('/', function(req, res, next) {
         userImage: 'user_2.png',
       },
     ],
+    postLikeCount: 321,
 
     // おすすめ
     recommend: {
