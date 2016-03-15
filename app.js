@@ -23,9 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // static setup
-if (isDev(app)) {
-  app.use(express.static(path.join(__dirname, 'public')));
-}
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API setup
 var routesPath = path.join(__dirname, 'routes');
