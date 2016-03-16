@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "env NODE_PATH=./ca_modules:./lib nodemon ./bin/www"
+    "start": "env NODE_PATH=./ca_modules:./lib node --max_old_space_size=4096 ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -11,13 +11,9 @@
     "debug": "~2.2.0",
     "ect": "~0.5.9",
     "express": "~4.13.1",
-    "grunt": "^0.4.5",
-    "grunt-contrib-cssmin": "^0.14.0",
-    "grunt-contrib-uglify": "^0.10.0",
-    "ioredis": "^1.10.0",
     "lodash": "~3.10.1",
     "log4js": "^0.6.27",
-    "mongodb": "~2.0.48",
-    "neo-async": "~1.6.0"
+    "neo-async": "~1.6.0",
+    "mysql": "~2.10.2"
   }
 }

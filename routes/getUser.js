@@ -4,12 +4,10 @@ var express = require('express');
 var router = express.Router();
 
 var logger = require('logger');
-var orderService = require('service/order');
+var userService = require('service/user');
 
-router.get('/:orderId?', function(req, res) {
-  var orderId = req.params.orderId;
-
-  orderService.get(orderId, function(err, result) {
+router.get('/', (req, res) => {
+  userService.get(req.query, (err, result) => {
     if (err) {
       logger.app.error(err);
       res.json({ result: false });

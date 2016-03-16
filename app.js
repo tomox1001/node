@@ -69,16 +69,17 @@ if (isDev(app)) {
 }
 
 // datastore setup
-//var mongodb = require('./datastore/mongodb');
-//mongodb.connect();
+const mysql = require('datastore/mysql');
+mysql.init();
 
-//var redis = require('datastore/redis');
-//redis.connect();
-//
-//require('datastore/momongoz');
+// cache setup
+require('datastore/cache/cacheupdater').load(function(err) {
+  err && logger.app.error(err);
+});
 
 // uncaughtException
 process.on('uncaughtException', function(err) {
+  mysql.disconnect();
   logger.app.error(err);
 });
 
@@ -91,9 +92,3 @@ function isPrd(app) {
 }
 
 module.exports = app;
-
-// オンメモリにのせる
-require('cacheupdater').load(function(err) {
-  err && logger.app.error(err);
-});
-
