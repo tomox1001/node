@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "env NODE_PATH=./ca_modules:./lib PORT=8080 node --max_old_space_size=4096 ./bin/www"
+    "start": "env NODE_PATH=./ca_modules:./lib PORT=80 node --max_old_space_size=4096 ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
