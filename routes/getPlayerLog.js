@@ -15,9 +15,8 @@ router.get('/', (req, res) => {
     }
     const result = {
       result: true,
-      data:[
+      data:
         player
-      ]
     };
 
     res.json(result);
