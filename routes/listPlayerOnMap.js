@@ -15,9 +15,7 @@ router.get('/', (req, res) => {
     }
     const result = {
       result: true,
-      data:[
-        map
-      ]
+      data: map
     };
 
     res.json(result);
