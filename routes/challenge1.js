@@ -7,7 +7,7 @@ var logger = require('logger');
 var playerService = require('service/item');
 
 router.get('/', (req, res) => {
-  playerService.challenge1(req.query, (err, item) => {
+  playerService.challengeOne(req.query, (err, item) => {
     if (err) {
       logger.app.error(err);
       res.json({ result: false });
