@@ -7,7 +7,7 @@ var logger = require('logger');
 var playerService = require('service/player');
 
 router.get('/', (req, res) => {
-  playerService.exploreMap(req.query, (err, player) => {
+  playerService.hideItem(req.query, (err, player) => {
     if (err) {
       logger.app.error(err);
       res.json({ result: false });
